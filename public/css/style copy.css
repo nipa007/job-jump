@@ -10,6 +10,10 @@
 html{
   scroll-behavior: smooth;
 }
+
+
+
+
 #ft-div, #about, #Job, #contact{
   height: 100vh;
   width: 100%;
@@ -30,157 +34,6 @@ html{
 .navbar-brand span{
   color: #8DECB4;
 }
-
-header #dropd button {
-    position: relative;
-    cursor: pointer;
-    padding: 10px 14px;
-    border: 1px solid green;
-    border-radius: 4px;
-    outline: none;
-    margin-left: 4px;
-    background: transparent;
-    color: green;
-}
-header #dropd a{
-  font-size: 14px;
-  color: #fff;
-  text-align: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 10px 12px;
-}
-#dropd .content-d{
-  position: absolute;
-  background: lightgreen;
-  min-width: 100px;
-  display: none;
-  border-radius: 4px;
-  margin-left: 4px;
-}
-#dropd:hover .content-d{
-  display: block;
-
-}
-#dropd a:hover{
-  color: black;
-}
-#dropd:hover button{
-  background: lightgreen;
-  color: #fff;
-}
-
-/* loginform start */
-.loginform{
-  color: #CE5A67;
-  width: 500px;
-  padding: 50px;
-  border-radius: 10px;
-  background-color: lightgreen;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  position: absolute;
-  top: -150%;
-  left: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1.25);
-  transition: top 0ms ease-in-out 200ms,
-              opacity 200ms ease-in-out 0ms,
-              transform 200ms ease-in-out 0ms,;
-
-  z-index: 1;
-}
-.loginform.active{
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  top: 50%;
-  transition: top 0ms ease-in-out 0ms,
-              opacity 200ms ease-in-out 0ms,
-              transform 200ms ease-in-out 0ms,;
-
-}
-.loginform .cross{
-  position: absolute;
-  top: 10px;
-  right: 17px;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.loginform form h1{
-  font-size: 40px;
-  text-align: center;
-}
-
-
-.loginform form .inp-box{
-  width: 100%;
-  height: 45px;
-  margin: 50px 0px;
-}
-.loginform form .inp-box input{
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  font-size: 15px;
-  padding: 20px 45px 20px 20px;
-  outline: none;
-  border: none;
-  border: 2px solid #CE5A67;
-  border-radius: 30px;
-  background: transparent;
-}
-
-.loginform .inp-box input::placeholder{
-  color: gray;
-  opacity: .7;
-}
-.loginform .rem-forg{
-  font-size: 14px;
-  margin: 15px 10px 15px;
-  display: flex;
-  justify-content: space-between;
-}
-.loginform .rem-forg label {
-  cursor: pointer;
-}
-.loginform .rem-forg label input{
-  margin-right: 4px;
-
-}
-
-.loginform .rem-forg a{
-  color: #fff;
-  text-decoration: none;
-}
-.loginform .rem-forg a:hover{
-  color: #CE5A67;
-}
-.loginform button{
-  width: 100%;
-  height: 45px;
-  background: #3A3A3A;
-  border: none;
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-.loginform button:hover{
-  color: #3876BF;
-
-  background: #fff;
-}
-
-
-
-/* login end */
-
-
-
 .left-cont{
   width: 70%;
   margin: auto;
