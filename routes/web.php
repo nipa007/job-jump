@@ -33,4 +33,26 @@ Route::post('company/register', [CompanyController::class, 'companyDoRegister'])
 Route::get('candidate/registerPage', [CandidateController::class, 'candidateRegister'])->name('candidate.register');
 Route::post('candidate/register', [CandidateController::class, 'candidateDoRegister'])->name('candidate.do.register');
 
+//Candidate accounts settings
+Route::get('account/{id}', [AuthController::class, 'account'])->name('account');
+Route::post('account/{id}/update', [AuthController::class, 'accountUpdate'])->name('account.update');
+
+
+//Candidate Profile/CV
+// Route::get('candiate/cv', [CandidateController::class, 'createCv'])->name('candidate.cv.create');
+// Route::post('candiate/cv/store', [CandidateController::class, 'storeCv'])->name('candidate.cv.store');
+
+Route::get('candidate/personal-info', [CandidateController::class, 'personalInfo'])->name('personal.info');
+Route::post('candidate/personal-info/store', [CandidateController::class, 'personalInfoStore'])->name('personal.info.store');
+Route::get('candidate/personal-info/edit/{id}', [CandidateController::class, 'personalInfoEdit'])->name('personal.info.edit');
+Route::post('candidate/personal-info/{id}/update', [CandidateController::class, 'personalInfoUpdate'])->name('personal.info.update');
+
+Route::get('candidate/education', [CandidateController::class, 'educationCreate'])->name('create.education');
+Route::post('candidate/education/store', [CandidateController::class, 'educationStore'])->name('education.store');
+Route::get('candidate/education/edit/{id}', [CandidateController::class, 'educationEdit'])->name('education.edit');
+Route::post('candidate/education/{id}/update', [CandidateController::class, 'educationUpdate'])->name('education.update');
+
+
+
+
 

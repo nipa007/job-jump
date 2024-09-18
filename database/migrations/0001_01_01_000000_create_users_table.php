@@ -21,6 +21,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('profile_pic')->nullable();
+            $table->boolean('is_profile_created')->default(false);
+            $table->tinyInteger('is_active')->default(1);
             $table->timestamps();
         });
 

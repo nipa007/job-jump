@@ -1,5 +1,17 @@
+@php
+    $userId = Auth::id();
+    $personalDetailExists = \App\Models\Candidate\PersonalInfo::where('user_id', $userId)->exists();
+    $educationDetailExists = \App\Models\Candidate\Education::where('user_id', $userId)->exists();
+@endphp
+
+
+
+
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
-    <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="{{ route('home.page') }}" class="brand-link"> <img src="{{ asset('assets/images/logo-dark_custom_dashboard.png') }}" alt="JobPulse Logo" style=" width: 100px; height: 45px"> <!--end::Brand Image--> </a>
+    <div class="sidebar-brand"> <!--begin::Brand Link-->
+        <a href="{{ route('home.page') }}" class="brand-link">
+           <h4>Job Jump</h4>
+        </a>
 
         </div>
     <div class="sidebar-wrapper">
@@ -11,7 +23,7 @@
                       @elseif (Auth::user()->role == 'company')
                       <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i><p>Dashboard</p></a>
                   @else
-                      <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i><p>Dashboard</p></a>
+                      <a href="{{route('candidate.dashboard')}}" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i><p>Dashboard</p></a>
                   @endif
 
                 </li>
@@ -142,11 +154,92 @@
             </a>
         <ul class="nav nav-treeview">
                 @if (Auth::user()->is_profile_created == 0)
+                @if ($personalDetailExists)
                 <li class="nav-item">
-                    <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle">
+                    <a href="{{ route('personal.info.edit', ['id' => $userId]) }}" class="nav-link">
+                        <i class="nav-icon bi bi-pencil"></i>
+                        <p>Edit Personal Details</p>
+                    </a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link">
+                        <i class="nav-icon bi bi-circle"></i>
+                        <p>Create Personal Details</p>
+                    </a>
+                </li>
+            @endif
+
+            @if ($educationDetailExists)
+
+            <li class="nav-item">
+                <a href="{{ route('education.edit', ['id' => $userId]) }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                </i>
+                    <p>Edit Education Info</p>
+                </a>
+            </li>
+
+            @else
+            <li class="nav-item">
+                <a href="{{ route('create.education') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                </i>
+                    <p>Education Details</p>
+                </a>
+            </li>
+
+
+            @endif
+
+
+
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
 
                     </i>
-                        <p>Create</p>
+                        <p>Training</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                    </i>
+                        <p>Skills</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                    </i>
+                        <p>Experience</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                    </i>
+                        <p>Languages Proficiency</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                    </i>
+                        <p>Career and Application Info</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ route('personal.info') }}" class="nav-link"> <i class="nav-icon bi bi-circle">
+
+                    </i>
+                        <p>References</p>
                     </a>
                 </li>
                 @endif

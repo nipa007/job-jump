@@ -47,7 +47,20 @@
                 <div class="drop" id="dropd">
                     <button data-bs-toggle="dropdown" class="dropdown-toggle">Profile</button>
                 <div class="content-d">
-                    <a class="dropdown-item" id="show" onclick="show()">Dashboard</a>
+                   @if (Auth::user()->role == 'admin')
+
+                    <a class="dropdown-item" href="{{route('admin.dashboard')}}" >Dashboard</a>
+
+                   @elseif (Auth::user()->role == 'company')
+
+                    <a class="dropdown-item" href="{{route('company.dashboard')}}" >Dashboard</a>
+
+                   @else
+
+                    <a class="dropdown-item" href="{{route('candidate.dashboard')}}" >Dashboard</a>
+
+                   @endif
+                   
                     <a class="dropdown-item" id="show" onclick="show()" href="{{route('logout')}}">Logout</a>
                 </div>
 

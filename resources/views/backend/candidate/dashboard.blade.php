@@ -8,10 +8,10 @@
         <div class="row">
 
             @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
 
         @if (session()->has('logout'))
         <div class="alert alert-danger">
